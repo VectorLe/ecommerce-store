@@ -8,13 +8,14 @@
 	NAVBAR
 */
 #navbar {
-	display: flex;
+	display: flex !important;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	background-color: royalblue;
 	color: white;
 	padding: 10px;
+	display: block;
 }
 
 #navbar nav {
@@ -32,29 +33,32 @@ nav img {
 /*	animation: rotation 20s infinite linear;*/
 }
 
-nav ul li {
+nav ul .nav-link {
 	display: inline-block;
 	font-size: 1.618em;
 	margin: 0 20px;
 	overflow: hidden;
 	list-style-type: none;
 	font-weight: bold;
+	color: white;
+	text-decoration: none;
 }
 
-.wrapper {
+/*.wrapper {
 	display: flex;
 	width: 100%;
 	align-items: center;
 	justify-content: left;
-}
+}*/
 
 th {
 	background-color: royalblue;
 	color: white;
 }
 
+button.addToCart,
 #checkout {
-	background-color: lightsalmon; /* Green */
+	background-color: lightsalmon;
 	border: none;
 	color: white;
 	font-weight: bold;
@@ -66,6 +70,12 @@ th {
 	cursor: pointer;
 }
 
+button.addToCart {
+	padding: 7.5px 16px;
+	font-size: 12px;
+}
+
+button.addToCart:hover,
 #checkout:hover {
 	background-color: salmon;
 	transition: 0.5s;

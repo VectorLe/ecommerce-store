@@ -43,6 +43,7 @@ export default function CartProvider({ children }) {
 			// value is persisted throughout the children, like "global" throughout components
 			value={{
 				items: itemsWithQuantities(items),
+				itemsCount: items.length,
 				addToCart
 			}}
 		>

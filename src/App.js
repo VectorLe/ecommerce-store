@@ -12,8 +12,8 @@ export default function App() {
 
 	return (
 		<div>
-			<Navbar />
 			{
+				// TODO: PRODUCTS PAGE COMPONENT
 				products.map(product => (
 			        <div>
 						<img
@@ -24,6 +24,7 @@ export default function App() {
 					<div>{product.name}</div>
 					<div>
 						<button
+							className="addToCart"
 							onClick={() => cartContext.addToCart(product)}
 						>
 							Add to Cart
@@ -32,7 +33,6 @@ export default function App() {
 			        </div>
 	      		))
       		}
-			<Cart stripeToken="pk_test_lGdDk3ZKTN2Q7HJwCylNaR5600YANLK3fY"/>
 		</div>
 	);
 }
