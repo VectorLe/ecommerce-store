@@ -1,28 +1,5 @@
-import React, { useState, useEffect } from 'react'
-
-const items = [
-	{ 
-		sku: "price_HKKTtIgrAA89Vd", 
-		quantity: 1, 
-		price: 1799, 
-		img: "portable_charger",
-		name: "Portable Charger"
-	},
-	{ 
-		sku: "price_HKKS8gNAg3H6XC", 
-		quantity: 1, 
-		price: 999,
-		img: "phone_ring",
-		name: "Phone Ring"
-	},
-	{ 
-		sku: "price_HKKSujR3pK5vVg", 
-		quantity: 1, 
-		price: 1199, 
-		img: "phone_stand",
-		name: "Phone Stand"
-	}
-];
+import React, { useState, useEffect, useContext } from 'react';
+import { CartContext } from './context'
 
 // prices in tiems array listed as cents
 // function converts to currency format
@@ -30,13 +7,13 @@ function formatPrice(price) {
 	return `$${(price * 0.01).toFixed(2)}`
 }
 
-
 function totalPrice(items) {
 	return items.reduce((total, item) => total + item.quantity * item.price, 0.00)
 }
 
 export default function Cart({ stripeToken }) {
 	const [stripe, setStripe] = useState(null);
+	const context = useContext(CartContext);
 
 	// similar to componentDidMount
 	// if stripeToken were to change, function would be called again
@@ -46,7 +23,7 @@ export default function Cart({ stripeToken }) {
 
 	function checkout() {
 		stripe.redirectToCheckout({
-			lineItems: items.map(item => ({
+			lineItems: context.items.map(item => ({
 				price: item.sku,
 				quantity: item.quantity,
 			})),
@@ -67,16 +44,16 @@ export default function Cart({ stripeToken }) {
 				</tr>
 			</thead>
 			<tbody>{
-				items.map(item => <tr>
+				context.items.map(item => <tr>
 						<td>{item.name}</td>
 						<td><img src={`/img/${item.img}.jpg`} alt={item.name} width={50}/></td>
 						<td>{item.quantity}</td>
-						<td>{formatPrice(item.price)}</td>
+						<td>{formatPrice(item.price * item.quantity)}</td>
 				</tr>
 			)}
 			<tr>
 				<td style={{textAlign:"right", fontWeight:"bold"}} colSpan={3}>Total:</td>
-				<td>{formatPrice(totalPrice(items))}</td>
+				<td>{formatPrice(totalPrice(context.items))}</td>
 			</tr>
 			<tr>
 				<td style={{textAlign:"right"}} colSpan={4}>
