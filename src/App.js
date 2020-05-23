@@ -7,6 +7,7 @@ import { CartContext } from './components/cart/context'
 import products from "./data/products"
 
 export default function App() {
+	// allows us to use addToCart function and persist the value of items
 	const cartContext = useContext(CartContext);
 
 	return (

@@ -13,6 +13,7 @@ function totalPrice(items) {
 
 export default function Cart({ stripeToken }) {
 	const [stripe, setStripe] = useState(null);
+	// allows us to use the values of products through the context's items state array
 	const context = useContext(CartContext);
 
 	// similar to componentDidMount
