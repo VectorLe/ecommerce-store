@@ -9,7 +9,7 @@ export default function ProductCard(props) {
 	return (
 		<div className="product-card">
 			<img
-				src={`./img/${props.product.img}.jpg`}
+				src={`/ecommerce-store/img/${props.product.img}.jpg`}
 				alt={props.product.name}
 			/>
 			<div className="info">
