@@ -15,8 +15,8 @@ ReactDOM.render(
 		}
 		<CartProvider>
 			<Switch>
-				<Route exact path="/" component={Home} /> 
-				<Route exact path="/view-cart" component={ViewCartPage} /> 
+				<Route exact path="/ecommerce-store" component={Home} /> 
+				<Route exact path="/ecommerce-store/view-cart" component={ViewCartPage} /> 
 			</Switch>
 		</CartProvider>
 	</Router>,
