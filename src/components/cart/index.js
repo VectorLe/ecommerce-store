@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CartContext } from './context'
 
-// prices in tiems array listed as cents
+// prices in items array listed as cents
 // function converts to currency format
 function formatPrice(price) {
 	return `$${(price * 0.01).toFixed(2)}`

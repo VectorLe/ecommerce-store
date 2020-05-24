@@ -14,6 +14,12 @@ export default function CartProvider({ children }) {
 		setItems(prevState => [...prevState, item]);
 	}
 
+	// prices in items array listed as cents
+	// function converts to currency format
+	function formatPrice(price) {
+		return `$${(price * 0.01).toFixed(2)}`
+	}
+
 	// look for items and set quantities
 	// compares sku between items state array and list of products 
 	function itemsWithQuantities(items) {
@@ -44,6 +50,7 @@ export default function CartProvider({ children }) {
 			value={{
 				items: itemsWithQuantities(items),
 				itemsCount: items.length,
+				formatPrice,
 				addToCart
 			}}
 		>
