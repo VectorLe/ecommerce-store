@@ -9,7 +9,7 @@ export default function Navbar() {
 	return (
 		<div id="navbar">
 			<nav>
-				<img src="../img/logo.png" alt="logo"/>
+				<img src="/ecommerce-store/img/logo.png" alt="logo"/>
 				<ul>
 					<Link to="/ecommerce-store/" className="nav-link">
                 		Shop
