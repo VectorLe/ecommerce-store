@@ -41,7 +41,7 @@ export default function Cart({ stripeToken }) {
 				{
 					context.items.map(item => 
 							<div className="cart-item">
-								<div className="cart-item-img"><img src={`/img/${item.img}.jpg`} alt={item.name} width={150}/></div>
+								<div className="cart-item-img"><img src={`../img/${item.img}.jpg`} alt={item.name} width={150}/></div>
 								<div className="cart-item-name">{item.name}</div>
 							
 							<div className="cart-item-quantity">{item.quantity}</div>

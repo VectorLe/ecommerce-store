@@ -9,18 +9,18 @@ export default function Navbar() {
 	return (
 		<div id="navbar">
 			<nav>
-				<img src="./img/logo.png" alt="logo"/>
+				<img src="../img/logo.png" alt="logo"/>
 				<ul>
-					<Link to="/ecommerce-store" className="nav-link">
+					<Link to="/ecommerce-store/" className="nav-link">
                 		Shop
                 	</Link>
-		            <Link to="/ecommerce-store" className="nav-link">
+		            <Link to="/ecommerce-store/" className="nav-link">
                 		About
                 	</Link>
-                	<Link to="/ecommerce-store" className="nav-link">
+                	<Link to="/ecommerce-store/" className="nav-link">
                 		Contact
                 	</Link>
-                	<Link to="/ecommerce-store/view-cart" className="nav-link">
+                	<Link to="/ecommerce-store/view-cart/" className="nav-link">
                 		View Cart ({numItemsInCart})
                 	</Link>
 				</ul>
