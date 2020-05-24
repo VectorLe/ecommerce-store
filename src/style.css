@@ -106,11 +106,6 @@ nav ul .nav-link {
 	justify-content: flex-end;
 }
 
-th {
-	background-color: royalblue;
-	color: white;
-}
-
 button.addToCart,
 #checkout {
 	background-color: lightsalmon;
@@ -136,7 +131,59 @@ button.addToCart:hover,
 	transition: 0.5s;
 }
 
-@keyframes rotation {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+.cart-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	margin: 25px 0;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cart-title {
+	width: 100%;
+	margin: 25px 0;
+}
+
+.cart-item {
+	display: flex;
+	border-top: 2px solid lightgrey;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	padding: 50px;
+}
+
+.cart-item-img,
+.cart-item-name,
+.cart-item-quantity,
+.cart-item-price {
+	display: flex;
+	width: 100%;
+}
+
+.cart-item-name,
+.cart-item-quantity,
+.cart-item-price {
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.cart-end {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.checkout-total {
+	margin: 0 25px;
+	font-size: 25px;
+	font-weight: bold;
 }

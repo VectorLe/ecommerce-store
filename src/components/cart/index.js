@@ -34,34 +34,25 @@ export default function Cart({ stripeToken }) {
 		})
 	}
 
-	return <div className="wrapper">
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Image</th>
-					<th>Quantity</th>
-					<th>Price</th>
-				</tr>
-			</thead>
-			<tbody>{
-				context.items.map(item => <tr>
-						<td>{item.name}</td>
-						<td><img src={`/img/${item.img}.jpg`} alt={item.name} width={50}/></td>
-						<td>{item.quantity}</td>
-						<td>{formatPrice(item.price * item.quantity)}</td>
-				</tr>
-			)}
-			<tr>
-				<td style={{textAlign:"right", fontWeight:"bold"}} colSpan={3}>Total:</td>
-				<td>{formatPrice(totalPrice(context.items))}</td>
-			</tr>
-			<tr>
-				<td style={{textAlign:"right"}} colSpan={4}>
+	return (
+		<div className="wrapper">
+			<div className="cart-wrapper">
+				<h1 className="cart-title">Shopping Cart</h1>
+				{
+					context.items.map(item => 
+							<div className="cart-item">
+								<div className="cart-item-img"><img src={`/img/${item.img}.jpg`} alt={item.name} width={150}/></div>
+								<div className="cart-item-name">{item.name}</div>
+							
+							<div className="cart-item-quantity">{item.quantity}</div>
+							<div className="cart-item-price"> {formatPrice(item.price * item.quantity)}</div>
+					</div>
+				)}
+				<div className="cart-end">
+					<div class="checkout-total">Total: {formatPrice(totalPrice(context.items))}</div>
 					<button id="checkout" onClick={checkout}>Checkout</button>
-				</td>
-			</tr>
-			</tbody>
-		</table>
+				</div>
+			</div>
 	</div>
+	);
 }
