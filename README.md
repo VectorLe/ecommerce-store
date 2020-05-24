@@ -4,6 +4,7 @@
 
 ![Ecommerce Store Products Page](/public/img/screenshots/products_preview.png)
 ![Ecommerce Store Cart Page](/public/img/screenshots/cart_preview.png)
+![Ecommerce Store Checkout Page](/public/img/screenshots/checkout_preview.png)
 
 ## Built with
 * React.js: Frontend framework
