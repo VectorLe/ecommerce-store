@@ -11,16 +11,16 @@ export default function Navbar() {
 			<nav>
 				<img src="./img/logo.png" alt="logo"/>
 				<ul>
-					<Link to="/" className="nav-link">
+					<Link to="/ecommerce-store" className="nav-link">
                 		Shop
                 	</Link>
-		            <Link to="/" className="nav-link">
+		            <Link to="/ecommerce-store" className="nav-link">
                 		About
                 	</Link>
-                	<Link to="/" className="nav-link">
+                	<Link to="/ecommerce-store" className="nav-link">
                 		Contact
                 	</Link>
-                	<Link to="/view-cart" className="nav-link">
+                	<Link to="/ecommerce-store/view-cart" className="nav-link">
                 		View Cart ({numItemsInCart})
                 	</Link>
 				</ul>
